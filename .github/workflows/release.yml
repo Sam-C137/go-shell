@@ -22,12 +22,12 @@ jobs:
           go-version: '1.24'
 
       - name: Build binary
-        run: | 
+        run: |
           GOOS=${{ matrix.os }} GOARCH=${{ matrix.arch }} go build -o go-shell-${{ matrix.os }}-${{ matrix.arch }}
 
       - name: Upload Release Artifacts
         uses: softprops/action-gh-release@v1
         with:
           files: go-shell-${{ matrix.os }}-${{ matrix.arch }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
