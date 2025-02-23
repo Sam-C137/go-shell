@@ -29,3 +29,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: go-shell-${{ matrix.os }}-${{ matrix.arch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
