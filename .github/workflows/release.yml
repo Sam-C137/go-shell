@@ -29,5 +29,3 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: go-shell-${{ matrix.os }}-${{ matrix.arch }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
